@@ -78,7 +78,11 @@ public class Steque<Item> implements Iterable<Item> {
      * @return Item object from steque.
      */
     public Item pop() {
-        return null;
+        if (isEmpty())
+			throw new NoSuchElementException("No element exists in Steque");
+		Item item = first.item;
+		first = first.next;
+		return item;
     }
     
     /**
