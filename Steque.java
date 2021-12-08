@@ -111,6 +111,24 @@ public class Steque<Item> implements Iterable<Item> {
      * 
      */
     public Iterator<Item> iterator() {
-        return null;
+        return new StequeIterator();
     }
+
+    public class StequeIterator implements Iterator<Item> {
+		Node current = first;
+		public boolean hasNext() {
+			return current != null;
+		}
+		
+		public Item next() {
+			Item item = current.item;
+			current = current.next;
+			return item;
+		}
+
+		public void remove() {
+			throw new UnsupportedOperationException("Operation not supported");
+			
+		}
+	}
 }
