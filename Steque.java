@@ -98,7 +98,11 @@ public class Steque<Item> implements Iterable<Item> {
      * @return size as integer.
      */
     public int size() {
-        return 0;
+        int count = 0;
+		for(Item item : this) {
+			count++;
+		}
+		return count;
     }
     
     /**
